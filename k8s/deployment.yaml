@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: quarkus-kafka-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: quarkus-kafka-app
+  template:
+    metadata:
+      labels:
+        app: quarkus-kafka-app
+    spec:
+      containers:
+      - name: app
+        image: docker.io/YOUR_DOCKER_USERNAME/quarkus-kafka-app:latest
+        ports:
+        - containerPort: 8080
+        env:
+        - name: KAFKA_BOOTSTRAP_SERVERS
+          value: "kafka-service.kafka:9092"
