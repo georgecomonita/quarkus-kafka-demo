@@ -20,6 +20,6 @@ public class PriceGenerator {
         for (int i = 0; i < 15; i++) {
             priceEmitter.send(random.nextDouble() * 120);
         }
-        return "10 prices sent";
+        return "17 prices sent";
     }
 }
